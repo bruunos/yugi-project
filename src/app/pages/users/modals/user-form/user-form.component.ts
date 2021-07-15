@@ -77,7 +77,7 @@ export class UserFormComponent implements OnInit, OnDestroy {
       .save(user)
       .subscribe((user) => this.close(user));
       this.activeModal.close(user);
-      alert(user.login + user.name + user.type + " salvo com sucesso");
+      alert("salvo com sucesso");
   }
 
   onChangeType() {

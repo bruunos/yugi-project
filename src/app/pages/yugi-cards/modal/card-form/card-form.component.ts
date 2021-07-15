@@ -81,7 +81,7 @@ export class CardFormComponent implements OnInit, OnDestroy {
       .save(card)
       .subscribe((card) => this.close(card));
       this.activeModal.close(card);
-      alert(card.atk + card.def+ card.name + card.type + " salvo com sucesso");
+      alert("salvo com sucesso");
   }
 
   onChangeType() {

@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h4 class="modal-title">Deck of cards # {{card?.id || 'Novo'}}</h4>
+    <h4 class="modal-title">Deck de cartas</h4>
     <button type="button" class="close" aria-label="Close" (click)="close()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -11,7 +11,7 @@
         <input type="text" class="form-control" [class.is-invalid]="cardForm.get('name').errors"
           placeholder="Digite o nome da carta" formControlName="name">
         <div class="invalid-feedback">
-          Campo obrigatório.
+          Esse campo é obrigatório.
         </div>
       </div>
       <div class="form-group">
@@ -30,10 +30,10 @@
       </div>
     </form>
     <div class="alert alert-warning" role="alert" *ngIf="showFeedbackOnlyPlay">
-      Você não poderá alterar esse tipo!
+      Você não poderá alterar esse tipo de carta!
     </div>
     <div class="alert alert-danger" role="alert" *ngIf="cardForm.invalid">
-      Formulário inválido!
+      Formulário não preenchido!
     </div>
   </div>
   <div class="modal-footer">
