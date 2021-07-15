@@ -1,0 +1,8 @@
+<button (click)="deckDraw()" class="btn btn-primary btn-lg draw" role="button">Draw  new cards</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col mb-5" *ngFor="let card of cards">
+            <img [src]="card.image" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<h1>Deck</h1>
+<table class="color-table table table-striped mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Ataque</th>
+      <th scope="col">Defesa</th>
+      <th scope="col">Tipo</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let card of cards">
+      
+      <td>{{card.name}}</td>
+      <td>{{card.atk}}</td>
+      <td>{{card.def}}</td>
+      <td>{{card.type}}</td>
+      
+      
+    </tr>
+  </tbody>
+</table>
+
+<button type="button" class="btn btn-primary" (click)="add()" >Inserir nova carta</button>

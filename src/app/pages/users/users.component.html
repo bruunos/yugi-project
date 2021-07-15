@@ -1,0 +1,22 @@
+<h1>Jogadores</h1>
+<table class="color-table table table-striped mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Login</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Tipo</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+  
+      <td>{{user.login}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.type}}</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+<button type="button" class="btn btn-primary" (click)="add()" >Inserir novo jogador</button>

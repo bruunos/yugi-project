@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <h4 class="modal-title">Deck of cards # {{card?.id || 'Novo'}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="cardForm">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nome da carta</label>
+        <input type="text" class="form-control" [class.is-invalid]="cardForm.get('name').errors"
+          placeholder="Digite o nome da carta" formControlName="name">
+        <div class="invalid-feedback">
+          Campo obrigatório.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Ataque</label>
+        <input type="text" class="form-control" placeholder="poder de ataque" formControlName="atk">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Defesa</label>
+        <input type="text" class="form-control" placeholder="poder de defesa" formControlName="def">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo</label>
+        <select class="form-control" formControlName="type">
+          <option *ngFor="let type of cardTypes" [value]="type.value">{{type.label}}</option>
+        </select>
+      </div>
+    </form>
+    <div class="alert alert-warning" role="alert" *ngIf="showFeedbackOnlyPlay">
+      Você não poderá alterar esse tipo!
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="cardForm.invalid">
+      Formulário inválido!
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="close()">Fechar</button>
+    <button type="submit" class="btn btn-primary" (click)="submit()">Salvar</button>
+  </div>
