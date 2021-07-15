@@ -11,13 +11,13 @@ const routes: Routes = [
   },
   {
     path: 'deck/users-form',
-    canActivate: [AppGuard],
+    //canActivate: [AppGuard],
     loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule)
   },
 
   {
     path: 'deck/cards-form',
-    canActivate: [AppGuard],
+    //canActivate: [AppGuard],
     loadChildren: () => import('./pages/yugi-cards/cards.module').then(m => m.CardsModule)
   },
 
@@ -29,7 +29,7 @@ const routes: Routes = [
 
   {
     path: 'deck',
-    canActivate: [AppGuard],
+    //canActivate: [AppGuard],
     loadChildren: () => import('./pages/deck/deck.module').then(m => m.DeckModule)
   },
   
