@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://deckofcardsapi.com/api'
+  apiUrl: 'http://deckofcardsapi.com/api',
+  api: 'http://localhost:4203'
 };
 
 /*

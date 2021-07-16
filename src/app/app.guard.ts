@@ -12,7 +12,7 @@ export class AppGuard implements CanActivate {
   ) { }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const isAuthenticate = false;
+    const isAuthenticate = true;
 
     if (!isAuthenticate) {
       this.router.navigate(['unauthorized']);
