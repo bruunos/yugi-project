@@ -14,9 +14,14 @@
       <td>{{user.login}}</td>
       <td>{{user.name}}</td>
       <td>{{user.type}}</td>
-      
+      <td>
+        <button type="button" class="btn btn-danger" (click)="delete(user)" >Excluir</button>
+        <button type="button" class="btn btn-secondary" (click)="edit(user)" >Editar</button>
+      </td>
     </tr>
   </tbody>
 </table>
 
 <button type="button" class="btn btn-primary" (click)="add()" >Inserir novo jogador</button>
+<!-- <button type="button" class="btn btn-primary" (click)="remove()" >Remover jogador</button> -->
+<!-- <button type="button" class="btn btn-primary" (click)="getAll()" >Mostrar jogadores</button> -->
