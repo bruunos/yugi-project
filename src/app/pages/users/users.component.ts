@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { environment } from 'src/environments/environment';
 import { UserFormComponent } from './modals/user-form/user-form.component';
 import { User } from './users.models';
 import { UsersService } from './users.service';
@@ -14,12 +12,11 @@ import { UsersService } from './users.service';
 export class UsersComponent implements OnInit {
 
   public users: User[] = [];
-  
+
 
   constructor(
     private usersService: UsersService,
     private modalService: NgbModal,
-    private httpClient: HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -35,10 +32,7 @@ export class UsersComponent implements OnInit {
         this.users.push(user);
       });
   }
-  // remove(){
-  //   this.users.pop();
-  // }
-
+  
   edit(user: User) {
     const modalRef = this.modalService.open(UserFormComponent);
     modalRef.componentInstance.user = user;
@@ -50,12 +44,8 @@ export class UsersComponent implements OnInit {
   }
 
   delete(user: User) {
-    // const modalRef = this.modalService.open(UserDeleteComponent);
-    // modalRef.componentInstance.user = user;
-    // modalRef.result
-      
-        this.users = this.users.filter((x) => x.id !== user.id);
-      
+    this.users = this.users.filter((x) => x.id !== user.id);
+
   }
 
 }

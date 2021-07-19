@@ -11,15 +11,18 @@
   </thead>
   <tbody>
     <tr *ngFor="let card of cards">
-      
+
       <td>{{card.name}}</td>
       <td>{{card.atk}}</td>
       <td>{{card.def}}</td>
       <td>{{card.type}}</td>
-      
-      
+      <td>
+
+        <button type="button" class="btn btn-danger" (click)="delete(card)">Excluir</button>
+        <button type="button" class="btn btn-secondary" (click)="edit(card)">Editar</button>
+      </td>
     </tr>
   </tbody>
 </table>
 
-<button type="button" class="btn btn-primary" (click)="add()" >Inserir nova carta</button>
+<button type="button" class="btn btn-primary" (click)="add()">Inserir nova carta</button>

@@ -31,4 +31,18 @@ export class CardsComponent implements OnInit {
         this.cards.push(card);
       });
   }
+
+  edit(card: Card) {
+    const modalRef = this.modalService.open(CardFormComponent);
+    modalRef.componentInstance.user = card;
+    modalRef.result
+      .then((card) => {
+        const cardIndex = this.cards.findIndex((x) => x.id === card.id);
+        this.cards[cardIndex] = card;
+      });
+  }
+
+  delete(card: Card) {
+    this.cards = this.cards.filter((x) => x.id !== card.id)
+  }
 }
